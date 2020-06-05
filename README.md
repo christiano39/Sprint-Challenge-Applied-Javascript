@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+It is the virtual interpretation of the webpage, consisting of nodes which are mostly html elements.
+
 2. What is an event?
+
+An event is anything that happens on the webpage. There are many different types of events i.e. clicks, page load, scrolling, hovering, keypresses, ect.
 
 3. What is an event listener?
 
+An event listener is an asynchronous function that listens for specific events on specific elements and then runs a function once the event is triggered
+
 4. Why would we convert a NodeList into an Array?
 
+A NodeList does not have access to all of the advanced array methods such as .map or .filter.
+
 5. What is a component?
+
+A comonent is a small modular collection of html elements that can be easily added anywhere into the dom
 
 ### Git Set up
 

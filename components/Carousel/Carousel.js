@@ -17,3 +17,69 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const carouselContainer = document.querySelector('.carousel-container')
+
+function Carousel(){
+  const carouselDiv = document.createElement('div')
+  const leftButton = document.createElement('div')
+  const rightButton = document.createElement('div')
+  const mountainImg = document.createElement('img')
+  const computerImg = document.createElement('img')
+  const treesImg = document.createElement('img')
+  const turntableImg = document.createElement('img')
+
+  carouselDiv.classList.add('carousel')
+  leftButton.classList.add('left-button')
+  rightButton.classList.add('right-button')
+  leftButton.textContent = '<'
+  rightButton.textContent = '>'
+
+  mountainImg.src = './assets/carousel/mountains.jpeg'
+  computerImg.src = './assets/carousel/computer.jpeg'
+  treesImg.src = './assets/carousel/trees.jpeg'
+  turntableImg.src = './assets/carousel/turntable.jpeg'
+
+  //////////////////////////////////////////////
+
+  const photos = [mountainImg, computerImg, treesImg, turntableImg]
+  let i = 0
+  photos[i].style.display = 'block'
+  
+  rightButton.addEventListener('click', e => {
+    if (i < photos.length - 1){
+      i++
+      photos[i - 1].style.display = 'none'
+      photos[i].style.display = 'block'
+    }else {
+      i = 0
+      photos[photos.length - 1].style.display = 'none'
+      photos[i].style.display = 'block'
+    }
+  })
+
+  leftButton.addEventListener('click', e => {
+    if (i > 0){
+      i--
+      photos[i + 1].style.display = 'none'
+      photos[i].style.display = 'block'
+    }else {
+      i = photos.length - 1
+      photos[0].style.display = 'none'
+      photos[i].style.display = 'block'
+    }
+  })
+
+  //////////////////////////////////////////////
+
+  carouselDiv.appendChild(leftButton)
+  carouselDiv.appendChild(mountainImg)
+  carouselDiv.appendChild(computerImg)
+  carouselDiv.appendChild(treesImg)
+  carouselDiv.appendChild(turntableImg)
+  carouselDiv.appendChild(rightButton)
+
+  return carouselDiv
+}
+
+carouselContainer.appendChild(Carousel())
