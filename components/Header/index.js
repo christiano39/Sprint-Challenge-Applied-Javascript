@@ -36,6 +36,6 @@ let today = 'June 5, 2020'
 let todaysTemp = '85°'
 
 const newHeader = Header(today, todaysTemp);
-const headerContainer = document.querySelector('.header-container')
+const headerContainer = document.querySelector('div.header-container')
 
 headerContainer.appendChild(newHeader)
